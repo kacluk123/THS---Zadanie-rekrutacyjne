@@ -1,0 +1,42 @@
+.Input_holder {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Input {
+  height: 48px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid var(--light-grey-200);
+  border-radius: 8px;
+  padding: 16px;
+  cursor: text;
+}
+
+.Input_title {
+  font-size: var(--font-size-default);
+  color: var(--black);
+}
+
+.Input__with_icon {
+  display: flex;
+}
+
+.Input_element {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: var(--font-size-default);
+  color: var(--black);
+}
+
+.Input_element::placeholder {
+  color: var(--hard-grey-200);
+}
+
+.Input_element_icon {
+  align-self: center;
+}

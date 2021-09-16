@@ -1,0 +1,38 @@
+/* Customize the label (the container) */
+.Checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  display: flex;
+}
+
+.Checkbox_input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.Checkbox_checkmark {
+  height: 24px;
+  width: 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--light-grey-200);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.Checkbox_title {
+  color: var(--black);
+  font-size: var(--font-size-default)
+}
+
+.Checkbox input:checked ~ .Checkbox_checkmark {
+  background-color: var(--blue-100);
+}

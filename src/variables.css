@@ -1,0 +1,17 @@
+:root {
+  --phone: 576px;
+  --table: 768px;
+  --notebook: 992px;
+  --desktop: 1200px;
+
+  --blue-200: #2140E8;
+  --blue-100: #4460F7;
+  --orange: #F9A52B;
+  --black: #1A1B1D;
+  --light-grey-100: #F0F1F5;
+  --light-grey-200: #E0E2EA;
+  --hard-grey-100: #B9BDCF;
+  --hard-grey-200: #9194A5;
+
+  --font-size-default: 14px;
+}
