@@ -9,7 +9,7 @@ interface ICheckbox extends React.InputHTMLAttributes<HTMLInputElement> {
 const Checkbox = React.forwardRef<HTMLInputElement, ICheckbox>(({ checked, title, ...props }, ref) => {
   return (
     <label className="Checkbox">
-      <input type="checkbox" className="Checkbox_input" checked={checked} {...props} />
+      <input type="checkbox" className="Checkbox_input" checked={checked} ref={ref} {...props} />
       <span className="Checkbox_checkmark">
         {checked ? <icons.CheckIcon color='#FFFFFF' width={16} height={16} /> : null} 
       </span>
