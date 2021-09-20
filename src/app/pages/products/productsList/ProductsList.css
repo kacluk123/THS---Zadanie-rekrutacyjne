@@ -1,0 +1,27 @@
+.ProductsList {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.ProductsList__with-spiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProductsList__empty {
+  display: flex;
+  justify-content: center;
+}
+
+.ProductsList, .ProductsList__empty, .ProductsList__with-spiner {
+  padding: 24px;
+  flex-grow: 1;
+}
+
+@media (min-width: 1200px) {
+  .ProductsList, .ProductsList__empty, .ProductsList__with-spiner {
+    padding: 56px 108px;
+  }
+}

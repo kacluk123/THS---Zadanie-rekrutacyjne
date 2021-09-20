@@ -1,0 +1,30 @@
+.ProductsNoItems {
+  background: #FFFFFF;
+  border-radius: 8px;
+  height: 344px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ProductsNoItems_header {
+  text-align: center;
+  color: var(--black);
+  margin-top: 22px;
+  font-size: 18px;
+}
+
+.ProductsNoItems_description {
+  text-align: center;
+  color: var(--light-grey-200);
+  margin-top: 8px;
+  font-size: var(--font-size-default)
+}
+
+@media (min-width: 992px) {
+  .ProductsNoItems {
+    width: 600px;
+  }
+}

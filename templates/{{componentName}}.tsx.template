@@ -5,12 +5,10 @@ interface I{{componentName}} {
 
 }
 
-const {{componentName}}: React.FC<I{{componentName}}> = () => {
+export const {{componentName}}: React.FC<I{{componentName}}> = () => {
   return (
     <div className='{{componentName}}'>
 
     </div>
   )
 } 
-
-export default {{componentName}}

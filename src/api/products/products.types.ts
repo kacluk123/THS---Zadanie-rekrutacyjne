@@ -16,9 +16,10 @@ export interface ServerResponseProducts {
   links: ServerResponseLinks
 }
 
-export interface ServerResponseProductsQuery {
-  search?: number
+export interface ProductsQuery {
+  search?: string
   limit?: number
   page?: number
   promo?: boolean
+  active?: boolean
 }

@@ -1,0 +1,6 @@
+.ProductsPagination {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  padding: 40px 0 68px 0;
+}

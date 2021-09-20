@@ -1,0 +1,1 @@
+export const range = (from: number, to: number) => Array(to - from + 1).fill(from).map((x, y) => x + y)
