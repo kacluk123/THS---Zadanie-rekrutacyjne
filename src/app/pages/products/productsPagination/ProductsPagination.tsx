@@ -1,6 +1,8 @@
+import * as React from 'react'
+
 import { ProductsQuery } from 'api/products/products.types';
 import { Pagination } from 'app/components/pagination';
-import * as React from 'react'
+
 import './ProductsPagination.css'
 
 interface IProductsPagination {

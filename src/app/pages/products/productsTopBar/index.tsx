@@ -1,3 +1,3 @@
-import ProductsTopBar from './ProductsTopBar'
+import {ProductsTopBar} from './ProductsTopBar'
 
-export default ProductsTopBar
+export {ProductsTopBar}

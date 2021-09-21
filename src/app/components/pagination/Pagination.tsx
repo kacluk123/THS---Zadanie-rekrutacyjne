@@ -1,5 +1,7 @@
 import * as React from 'react'
+
 import { range } from 'utils/range/range'
+
 import './Pagination.css'
 
 interface IPagination {
@@ -29,9 +31,14 @@ const Separator = ({ separator }: { separator: string}) =>  <div className='Pagi
 
 const RenderSeparatorOrNumber = ({ pagesRange, handlePageChange, currentPage }: { pagesRange: (string | number)[], handlePageChange: (page: number) => void, currentPage: number}) => (
   <>
-    {pagesRange.map(page => typeof page === 'number' ? (
-        <PaginationNumber handlePageChange={handlePageChange} page={page} isActive={page === currentPage} />
-      ) : <Separator separator={page} />)
+    {pagesRange.map(page => (
+      <React.Fragment key={page}>
+        {typeof page === 'number' ? (
+          <PaginationNumber handlePageChange={handlePageChange} page={page} isActive={page === currentPage} />
+          ) : <Separator separator={page} />
+        }
+      </React.Fragment>
+    ))
     }
   </>
 )
@@ -41,7 +48,7 @@ const GetPaginationNumbers = ({ paginationMode, pages , pagesOnScreen, currentPa
     case PaginationMode.all: {
       return (
         <>
-          {range(1, pages).map(page => <PaginationNumber isActive={page === currentPage} handlePageChange={handlePageChange} page={page} />)}
+          {range(1, pages).map(page => <PaginationNumber key={page} isActive={page === currentPage} handlePageChange={handlePageChange} page={page} />)}
         </>
       )
     }

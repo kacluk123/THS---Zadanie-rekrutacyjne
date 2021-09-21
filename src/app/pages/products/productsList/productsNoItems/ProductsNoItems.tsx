@@ -1,12 +1,10 @@
-import { EmptyIcon } from 'app/components/icons/Empty'
 import * as React from 'react'
+
+import { EmptyIcon } from 'app/components/icons/Empty'
+
 import './ProductsNoItems.css'
 
-interface IProductsNoItems {
-
-}
-
-export const ProductsNoItems: React.FC<IProductsNoItems> = () => {
+export const ProductsNoItems: React.FC = () => {
   return (
     <div className='ProductsNoItems'>
       <EmptyIcon 

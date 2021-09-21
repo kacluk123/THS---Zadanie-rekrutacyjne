@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import { api } from 'api'
 import { ServerResponseProducts, ProductsQuery } from 'api/products/products.types'
 import { useRequestStatus } from 'hooks/useResuestStatus/useRequestStatus'
@@ -6,7 +7,7 @@ import { useRequestStatus } from 'hooks/useResuestStatus/useRequestStatus'
 export const useProducts = () => {
   const [ products, setProducts ] = React.useState<ServerResponseProducts | null>(null)
   const [ query, setQuery ] = React.useState<ProductsQuery>({
-    limit: 2,
+    limit: 6,
     page: 1,
     search: ""
   })
@@ -23,6 +24,7 @@ export const useProducts = () => {
       const products = await api.products.getProducts(query)
       setProducts(products)
     } catch {
+      //and maybe some notification 
       setRequestStatus("error")
     } finally {
       setRequestStatus('done')

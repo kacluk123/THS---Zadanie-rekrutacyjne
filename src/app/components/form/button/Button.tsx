@@ -13,7 +13,7 @@ const buttonStyles: {[k in buttonTypes]: string} = {
   'secondary': 'Button__secondary' 
 }
 
-const Button = React.forwardRef<HTMLButtonElement, IButton>(({
+export const Button = React.forwardRef<HTMLButtonElement, IButton>(({
   theme = 'primary',  
   children, 
   ...props
@@ -24,5 +24,3 @@ const Button = React.forwardRef<HTMLButtonElement, IButton>(({
     </button>
   )
 })
-
-export default Button

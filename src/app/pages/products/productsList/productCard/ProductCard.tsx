@@ -1,42 +1,54 @@
-import { ServerResponseProduct } from 'api/products/products.types'
-import Button from 'app/components/form/button'
-import { icons } from 'app/components/icons'
 import * as React from 'react'
+import { Link } from 'react-router-dom'
+
+import { ServerResponseProduct } from 'api/products/products.types'
+import { Button } from 'app/components/form/button'
+import { icons } from 'app/components/icons'
 import { range } from 'utils/range/range'
+
 import './ProductCard.css'
 
 interface IProductCard {
   cardData: ServerResponseProduct
+  displayType?: 'list' | 'single'
 }
 
 const RATING_NUMBER = 5
 
-export const ProductCard: React.FC<IProductCard> = ({ cardData }) => {
+export const ProductCard: React.FC<IProductCard> = ({ cardData, displayType = 'list' }) => {
   return (
-    <div className='ProductCard'>
+    <div data-testid='ProductCard' className={`ProductCard ${displayType === 'list' ? 'ProductCard__list' : 'ProductCard__single'}`}>
       {cardData.promo ? (
         <div className='ProductCard_promo-code'>
           Promo
         </div>
       ) : null}
-      <img className='ProductCard_image' src={cardData.image} />
-      <div className='ProductCard_content'>
-        <div className='ProductCard_header'>
+      <img className={`ProductCard_image ${displayType === 'list' ? 'ProductCard_image__list' : 'ProductCard_image__single'}`} src={cardData.image} />
+      <div className={displayType === 'list' ? 'ProductCard_content' : 'ProductCard_content__single'}>
+        <div className={displayType === 'list' ? 'ProductCard_header' : 'ProductCard_header__single'}>
           {cardData.name}
         </div>
-        <div className='ProductCard_description'>
+        <div className={displayType === 'list' ? 'ProductCard_description' : 'ProductCard_description__single'}>
           {cardData.description}
         </div>
-        <div className='ProductCard_rating'>
-          {range(1, RATING_NUMBER).map(num => (
-            num > cardData.rating ? <icons.StarBorderIcon color='var(--hard-grey-100)' /> : <icons.StarFilledIcon color='var(--orange)' />
-          ))}
-        </div>
-        <div className='ProductCard_details-button'>
-          <Button disabled={!cardData.active} >
-            {cardData.active ? 'Show details' : 'Unavailable'}
-          </Button>
-        </div>
+        {displayType === 'list' ? (
+          <>
+            <div className='ProductCard_rating'>
+              {range(1, RATING_NUMBER).map(num => (
+                <React.Fragment key={num}>
+                  {num > cardData.rating ? <icons.StarBorderIcon color='var(--hard-grey-100)' /> : <icons.StarFilledIcon color='var(--orange)' />}
+                </React.Fragment>
+              ))}
+            </div>
+            <div className='ProductCard_details-button'>
+              <Link to={`/products/${cardData.id}`}>
+                <Button disabled={!cardData.active} >
+                  {cardData.active ? 'Show details' : 'Unavailable'}
+                </Button>
+              </Link>
+            </div>
+          </>
+        ) : null}
       </div>
     </div>
   )

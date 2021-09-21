@@ -1,9 +1,11 @@
-import { ProductsQuery } from 'api/products/products.types'
-import Button from 'app/components/form/button'
-import Checkbox from 'app/components/form/checkbox'
-import Input from 'app/components/form/input'
-import { icons } from 'app/components/icons'
 import * as React from 'react'
+
+import { ProductsQuery } from 'api/products/products.types'
+import { Button } from 'app/components/form/button'
+import { Checkbox } from 'app/components/form/checkbox'
+import { Input } from 'app/components/form/input'
+import { icons } from 'app/components/icons'
+
 import './ProductsTopBar.css'
 
 interface IProductsTopBar {
@@ -23,7 +25,7 @@ const removePropFromObject = <T extends Object>(obj: T, propToDelete: string) =>
   )
 }
 
-const ProductsTopBar: React.FC<IProductsTopBar> = ({ query, manipulateQuery }) => {
+export const ProductsTopBar: React.FC<IProductsTopBar> = ({ query, manipulateQuery }) => {
   const handleChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     manipulateQuery({
       ...query,
@@ -65,11 +67,19 @@ const ProductsTopBar: React.FC<IProductsTopBar> = ({ query, manipulateQuery }) =
         </Button>
       </div>
       <div className='ProductsTopBar_checkboxes '>
-        <Checkbox title='Active' name='active' onChange={handleChangeCheckboxes} />
-        <Checkbox title='Promo' name='promo' onChange={handleChangeCheckboxes} />
+        <Checkbox 
+          title='Active' 
+          name='active' 
+          onChange={handleChangeCheckboxes} 
+          checked={Boolean(query.active)} 
+        />
+        <Checkbox 
+          title='Promo' 
+          name='promo' 
+          onChange={handleChangeCheckboxes} 
+          checked={Boolean(query.promo)} 
+        />
       </div>
     </div>
   )
 } 
-
-export default ProductsTopBar

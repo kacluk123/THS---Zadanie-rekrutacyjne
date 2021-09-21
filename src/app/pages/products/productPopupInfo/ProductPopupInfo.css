@@ -1,0 +1,23 @@
+.ProductPopupInfo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(27, 28, 29, 0.9);
+  mix-blend-mode: normal;
+  display: flex;
+  padding: 0 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProductPopupInfo_card-container {
+  position: relative;
+}
+
+.ProductPopupInfo_close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  cursor: pointer;
+}

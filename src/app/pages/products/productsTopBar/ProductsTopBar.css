@@ -24,7 +24,8 @@
 
 .ProductsTopBar_login-button {
   grid-area: loginButton;
-  min-width: 88px;
+  width: 88px;
+  justify-self: flex-end;
 }
 
 .ProductsTopBar_checkboxes {
@@ -34,19 +35,27 @@
   grid-area: checkboxes;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .ProductsTopBar {
     grid-template-areas: "logo searchInput checkboxes loginButton";
-    padding: 52px 108px;
     align-items: center;
   }
+
+  .ProductsTopBar_login-button {
+    justify-self: flex-end;
+  }
+
   .ProductsTopBar_checkboxes {
     margin: 0 0 0 24px;
   }
+
   .ProductsTopBar_search-input {
     margin-top: 0px;
   }
-  .ProductsTopBar_login-button {
-    justify-self: flex-end;
+}
+
+@media (min-width: 1200px) {
+  .ProductsTopBar {
+    padding: 52px 108px;
   }
 }

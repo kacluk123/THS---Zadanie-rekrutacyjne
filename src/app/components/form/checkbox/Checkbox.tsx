@@ -1,12 +1,15 @@
-import { icons } from 'app/components/icons'
 import * as React from 'react'
+
 import './Checkbox.css'
+
+import { icons } from 'app/components/icons'
+
 
 interface ICheckbox extends React.InputHTMLAttributes<HTMLInputElement> {
   title: string
 }
 
-const Checkbox = React.forwardRef<HTMLInputElement, ICheckbox>(({ checked, title, ...props }, ref) => {
+export const Checkbox = React.forwardRef<HTMLInputElement, ICheckbox>(({ checked, title, ...props }, ref) => {
   return (
     <label className="Checkbox">
       <input type="checkbox" className="Checkbox_input" checked={checked} ref={ref} {...props} />
@@ -17,4 +20,3 @@ const Checkbox = React.forwardRef<HTMLInputElement, ICheckbox>(({ checked, title
     </label>
   )
 })
-export default Checkbox

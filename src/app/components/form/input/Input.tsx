@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import './Input.css'
 
 interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -6,7 +7,7 @@ interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
   inputIcon?: React.ReactNode
 }
 
-const Input = React.forwardRef<HTMLInputElement, IInput>(({ title, inputIcon, ...props}, ref) => {
+export const Input = React.forwardRef<HTMLInputElement, IInput>(({ title, inputIcon, ...props}, ref) => {
   return (
     <div className='Input_holder'>
       {title ? <span className='Input_title'>{title}</span> : null}
@@ -21,5 +22,3 @@ const Input = React.forwardRef<HTMLInputElement, IInput>(({ title, inputIcon, ..
     </div>
   )
 }) 
-
-export default Input
