@@ -2,8 +2,8 @@ import * as React from 'react'
 
 import { api } from 'api'
 import { ServerResponseProducts, ProductsQuery } from 'api/products/products.types'
-import { useRequestStatus } from 'hooks/useResuestStatus/useRequestStatus'
-import { useDebounce } from 'hooks/useDebounce/useDebounce'
+import { useRequestStatus } from '../useRequestStatus/useRequestStatus'
+import { useDebounce } from '../useDebounce/useDebounce'
 
 export const useProducts = () => {
   const [ products, setProducts ] = React.useState<ServerResponseProducts | null>(null)
