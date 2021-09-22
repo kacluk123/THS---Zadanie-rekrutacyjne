@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "build": "react-scripts build",
-    "coverage": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test --coverage --watchAll=false",
+    "coverage": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test --env=jest-environment-jsdom-sixteen --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
-    "test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test",
+    "test": "cross-env NODE_ICU_DATA=node_modules/full-icu react-scripts test --env=jest-environment-jsdom-sixteen",
     "serve": "./node_modules/.bin/http-server ./build --port 1337",
     "e2e:open": "cd e2e && ./node_modules/.bin/cypress open; cd ..",
     "e2e:run:firefox": "cd e2e && ./node_modules/.bin/cypress run --browser firefox && cd ..",
@@ -46,14 +46,16 @@
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.3",
-    "react-test-renderer": "16.13.1",
-    "typescript": "3.9.7"
+    "react-test-renderer": "16.13.1"
   },
   "devDependencies": {
     "@types/testing-library__jest-dom": "5.9.2",
     "cross-env": "7.0.2",
     "full-icu": "1.3.1",
     "http-server": "0.12.3",
+    "jest-environment-jsdom-sixteen": "^2.0.0",
+    "msw": "0.35.0",
+    "typescript": "4.4.3",
     "wait-on": "5.2.0"
   }
 }

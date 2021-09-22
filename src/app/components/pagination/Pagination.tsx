@@ -24,7 +24,7 @@ enum PaginationMode {
 const SEPARATOR = '...'
 
 const PaginationNumber = ({ page, handlePageChange, isActive }: { page: number, handlePageChange: (page: number) => void, isActive: boolean }) => (
-  <div className={isActive ? 'Pagination_text__active' : 'Pagination_text'} onClick={() => { handlePageChange(page) }}>{page}</div>
+  <div data-testid='PaginationNumber' className={isActive ? 'Pagination_text__active' : 'Pagination_text'} onClick={() => { handlePageChange(page) }}>{page}</div>
 )
 
 const Separator = ({ separator }: { separator: string}) =>  <div className='Pagination_text'>{separator}</div>
@@ -112,12 +112,12 @@ export const Pagination: React.FC<IPagination> = ({ currentPage, pages, handlePa
   const isLastDisabled = currentPage === pages
   const isFirstDisabled = currentPage === 1
 
-  if (pages === 0) {
+  if (pages <= 1) {
     return null
   }
 
   return (
-    <div className='Pagination'>
+    <div className='Pagination' data-testid='Pagination'>
       <button className='Pagination_first_last' onClick={handleFirst} disabled={isFirstDisabled}>
         First
       </button>

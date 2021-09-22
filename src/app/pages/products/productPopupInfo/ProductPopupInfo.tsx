@@ -22,15 +22,15 @@ export const ProductPopupInfo: React.FC<IProductPopupInfo> = ({ products }) => {
   }
 
   return (
-    <div className='ProductPopupInfo'>
+    <div className='ProductPopupInfo' data-testid='ProductPopupInfo'>
       <div className='ProductPopupInfo_card-container'>
         <div className='ProductPopupInfo_close-icon'> 
-          <Link to='/'>
+          <Link to='/' data-testid='ProductPopupInfoCloseIcon'>
             <icons.CloseIcon width={24} height={24} />
           </Link>
         </div>
         <ProductCard 
-          displayType='single'
+          displayType='popup-display'
           cardData={product}
         />
       </div>

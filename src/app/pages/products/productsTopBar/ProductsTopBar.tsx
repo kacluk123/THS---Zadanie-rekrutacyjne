@@ -56,7 +56,13 @@ export const ProductsTopBar: React.FC<IProductsTopBar> = ({ query, manipulateQue
   return (
     <div className='ProductsTopBar'>
       <div className='ProductsTopBar_search-input'>
-        <Input inputIcon={<icons.SearchIcon />} value={query.search} onChange={handleChangeSearch} name='products-search'/>
+        <Input 
+          inputIcon={<icons.SearchIcon />} 
+          value={query.search} 
+          onChange={handleChangeSearch} 
+          name='products-search'
+          data-testid='products-search-input'
+        />
       </div>
       <h1 className='ProductsTopBar_logo'>
         join.tsh.io
@@ -76,6 +82,7 @@ export const ProductsTopBar: React.FC<IProductsTopBar> = ({ query, manipulateQue
         <Checkbox 
           title='Promo' 
           name='promo' 
+          data-testid='promo'
           onChange={handleChangeCheckboxes} 
           checked={Boolean(query.promo)} 
         />

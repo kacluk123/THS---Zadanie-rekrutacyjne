@@ -3,6 +3,7 @@ import * as React from 'react'
 import { api } from 'api'
 import { ServerResponseProducts, ProductsQuery } from 'api/products/products.types'
 import { useRequestStatus } from 'hooks/useResuestStatus/useRequestStatus'
+import { useDebounce } from 'hooks/useDebounce/useDebounce'
 
 export const useProducts = () => {
   const [ products, setProducts ] = React.useState<ServerResponseProducts | null>(null)
@@ -14,9 +15,11 @@ export const useProducts = () => {
 
   const { requestStatus, setRequestStatus } = useRequestStatus()
 
+  const debouncedSearchTerm = useDebounce(query.search, 600);
+
   React.useEffect(() => {
     fetchProducts()
-  }, [JSON.stringify(query)])
+  }, [JSON.stringify({...query, search: debouncedSearchTerm})])
 
   const fetchProducts = async () => {
     setRequestStatus('pending')

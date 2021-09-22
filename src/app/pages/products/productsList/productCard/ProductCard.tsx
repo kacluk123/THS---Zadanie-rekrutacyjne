@@ -10,7 +10,7 @@ import './ProductCard.css'
 
 interface IProductCard {
   cardData: ServerResponseProduct
-  displayType?: 'list' | 'single'
+  displayType?: 'list' | 'popup-display'
 }
 
 const RATING_NUMBER = 5
@@ -33,10 +33,18 @@ export const ProductCard: React.FC<IProductCard> = ({ cardData, displayType = 'l
         </div>
         {displayType === 'list' ? (
           <>
-            <div className='ProductCard_rating'>
+            <div className='ProductCard_rating' data-testid='RatingStars'>
               {range(1, RATING_NUMBER).map(num => (
                 <React.Fragment key={num}>
-                  {num > cardData.rating ? <icons.StarBorderIcon color='var(--hard-grey-100)' /> : <icons.StarFilledIcon color='var(--orange)' />}
+                  {num > cardData.rating ? (
+                    <span data-testid='StarNotfilled'>
+                      <icons.StarBorderIcon color='var(--hard-grey-100)' />
+                    </span>
+                  ) : (
+                    <span data-testid='StarFilled'>
+                      <icons.StarFilledIcon color='var(--orange)' />
+                    </span>
+                  )}
                 </React.Fragment>
               ))}
             </div>
