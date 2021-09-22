@@ -15,7 +15,7 @@ interface IProductPopupInfo {
 export const ProductPopupInfo: React.FC<IProductPopupInfo> = ({ products }) => {
   const { productId } = useParams<{ productId: string }>()
 
-  const product = React.useMemo(() => (products.find(product => product.id === Number(productId))), [productId])
+  const product = React.useMemo(() => (products.find(product => product.id === Number(productId))), [productId, products])
 
   if (!product) {
     return <Redirect to='/' />

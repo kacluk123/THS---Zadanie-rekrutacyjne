@@ -23,7 +23,7 @@ export const ProductCard: React.FC<IProductCard> = ({ cardData, displayType = 'l
           Promo
         </div>
       ) : null}
-      <img className={`ProductCard_image ${displayType === 'list' ? 'ProductCard_image__list' : 'ProductCard_image__single'}`} src={cardData.image} />
+      <img alt={`Card: ${cardData.image}`} className={`ProductCard_image ${displayType === 'list' ? 'ProductCard_image__list' : 'ProductCard_image__single'}`} src={cardData.image} />
       <div className={displayType === 'list' ? 'ProductCard_content' : 'ProductCard_content__single'}>
         <div className={displayType === 'list' ? 'ProductCard_header' : 'ProductCard_header__single'}>
           {cardData.name}

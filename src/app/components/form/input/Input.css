@@ -7,7 +7,7 @@
 .Input {
   height: 48px;
   width: 100%;
-  background: #FFFFFF;
+  background: var(--main-white);
   border: 1px solid var(--light-grey-200);
   border-radius: 8px;
   padding: 16px;
@@ -15,8 +15,6 @@
 }
 
 .Input_title {
-  font-size: var(--font-size-default);
-  color: var(--black);
 }
 
 .Input__with_icon {
@@ -29,8 +27,6 @@
   border: none;
   outline: none;
   border-radius: 8px;
-  font-size: var(--font-size-default);
-  color: var(--black);
 }
 
 .Input_element::placeholder {

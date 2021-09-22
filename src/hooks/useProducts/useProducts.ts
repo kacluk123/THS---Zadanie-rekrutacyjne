@@ -19,7 +19,7 @@ export const useProducts = () => {
 
   React.useEffect(() => {
     fetchProducts()
-  }, [JSON.stringify({...query, search: debouncedSearchTerm})])
+  }, [query.page, query.active, query.promo, debouncedSearchTerm])
 
   const fetchProducts = async () => {
     setRequestStatus('pending')

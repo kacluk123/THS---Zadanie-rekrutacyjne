@@ -1,5 +1,5 @@
 .ProductsTopBar {
-  background: #FFFFFF;
+  background: var(--main-white);
   display: grid;
   padding: 54px 24px 36px 24px;
   width: 100%;
@@ -10,7 +10,7 @@
 }
 
 .ProductsTopBar_search-input {
-  background: #FFFFFF;
+  background: var(--main-white);
   grid-area: searchInput;
   margin-top: 28px;
 }
@@ -19,7 +19,6 @@
   grid-area: logo;
   font-size: 24px;
   align-self: center;
-  color: var(--black);
 }
 
 .ProductsTopBar_login-button {

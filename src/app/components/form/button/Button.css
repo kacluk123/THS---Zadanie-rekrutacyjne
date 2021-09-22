@@ -8,12 +8,12 @@
 
 .Button__primary {
   background: var(--blue-100);
-  color: #FFFFFF;
+  color: var(--main-white);
 }
 
 .Button__primary:hover {
   background: var(--blue-200);
-  color: #FFFFFF;
+  color: var(--main-white);
 }
 
 .Button__primary:disabled {
@@ -23,7 +23,7 @@
 .Button__secondary {
   border: 1px solid var(--blue-100);
   color: var(--blue-100);
-  background: white;
+  background: var(--main-white);
 }
 
 .Button__secondary:hover {

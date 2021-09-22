@@ -1,5 +1,5 @@
 .ProductCard {
-  background: #FFFFFF;
+  background: var(--main-white);
   border-radius: 8px;
   position: relative;
   height: 400px;
@@ -74,7 +74,7 @@
   height: 24px;
   background: var(--orange);
   padding: 0 17px;
-  color: #FFFFFF;
+  color: var(--main-white);
   position: absolute;
   top: 24px;
   left: 0;
