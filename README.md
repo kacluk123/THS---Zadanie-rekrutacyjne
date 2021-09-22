@@ -9,6 +9,18 @@ npm install
 npm start
 ```
 
+Implemented: 
+ - Cards list
+ - Cards list full view
+ - Pagination
+ - RWD
+ - Unit/Integration tests
+
+Worth to be implemented in future:
+ - Filters/pagination query params in url to load list with specyfic conditions (For example if user is on page 2 and he will send a link to his friend, then his friend should be redirected to page 2)
+ - Notifications in case of api error
+ - Error boundary component
+ - Path aliases
 ## E2E
 
 For E2E testing we are using the [Cypress](https://www.cypress.io/) framework. If you don't need it just remove e2e directory.
