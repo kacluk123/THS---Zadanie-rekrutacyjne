@@ -9,8 +9,6 @@ npm install
 npm start
 ```
 
-where `new-project` is your desired folder.
-
 ## E2E
 
 For E2E testing we are using the [Cypress](https://www.cypress.io/) framework. If you don't need it just remove e2e directory.
